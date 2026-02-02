@@ -31,8 +31,7 @@ async def test_project(dut):
     
     for x1 in x1_sequence:
         dut.ui_in[0].value = x1
-        dut._log.info(f"x1={x1}, y={dut.uo_out.value},
-        z1={dut.uio_out[0].value}")
+        dut._log.info(f"x1={x1}, y={dut.uo_out.value}, z1={dut.uio_out[0].value}")
         await RisingEdge(dut.clk)
         # Extra clock cycles to allow state settling
         await ClockCycles(dut.clk, 5)
